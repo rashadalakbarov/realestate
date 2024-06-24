@@ -1,0 +1,31 @@
+:root {
+  --main-color: #ffc107;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f4f2ef;
+}
+
+/* [Bootstrap 5.0.2 ]
+==============================================> */
+.btn:focus,
+.form-control:focus,
+.form-select:focus {
+  box-shadow: none !important;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav .show > .nav-link,
+.navbar-light .nav-item:hover .nav-link {
+  color: var(--main-color);
+}

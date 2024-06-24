@@ -1,0 +1,1013 @@
+[
+    {
+        "id": 1,
+        "name": "Ağcabədi",
+        "parent_id": 0
+    },
+    {
+        "id": 2,
+        "name": "Ağdam",
+        "parent_id": 0
+    },
+    {
+        "id": 3,
+        "name": "Ağdaş",
+        "parent_id": 0
+    },
+    {
+        "id": 4,
+        "name": "Ağstafa",
+        "parent_id": 0
+    },
+    {
+        "id": 5,
+        "name": "Ağsu",
+        "parent_id": 0
+    },
+    {
+        "id": 6,
+        "name": "Astara",
+        "parent_id": 0
+    },
+    {
+        "id": 7,
+        "name": "Babək",
+        "parent_id": 0
+    },
+    {
+        "id": 8,
+        "name": "Bakı",
+        "parent_id": 0
+    },
+    {
+        "id": 9,
+        "name": "Balakən",
+        "parent_id": 0
+    },
+    {
+        "id": 10,
+        "name": "Beyləqan",
+        "parent_id": 0
+    },
+    {
+        "id": 11,
+        "name": "Biləsuvar",
+        "parent_id": 0
+    },
+    {
+        "id": 12,
+        "name": "Bərdə",
+        "parent_id": 0
+    },
+    {
+        "id": 13,
+        "name": "Culfa",
+        "parent_id": 0
+    },
+    {
+        "id": 14,
+        "name": "Cəbrayıl",
+        "parent_id": 0
+    },
+    {
+        "id": 15,
+        "name": "Cəlilabad",
+        "parent_id": 0
+    },
+    {
+        "id": 16,
+        "name": "Daşkəsən",
+        "parent_id": 0
+    },
+    {
+        "id": 17,
+        "name": "Füzuli",
+        "parent_id": 0
+    },
+    {
+        "id": 18,
+        "name": "Goranboy",
+        "parent_id": 0
+    },
+    {
+        "id": 19,
+        "name": "Göyçay",
+        "parent_id": 0
+    },
+    {
+        "id": 20,
+        "name": "Göygöl",
+        "parent_id": 0
+    },
+    {
+        "id": 21,
+        "name": "Gədəbəy",
+        "parent_id": 0
+    },
+    {
+        "id": 22,
+        "name": "Gəncə",
+        "parent_id": 0
+    },
+    {
+        "id": 23,
+        "name": "Hacıqabul",
+        "parent_id": 0
+    },
+    {
+        "id": 24,
+        "name": "Imişli",
+        "parent_id": 0
+    },
+    {
+        "id": 25,
+        "name": "Ismayıllı",
+        "parent_id": 0
+    },
+    {
+        "id": 26,
+        "name": "Kürdəmir",
+        "parent_id": 0
+    },
+    {
+        "id": 27,
+        "name": "Kəlbəcər",
+        "parent_id": 0
+    },
+    {
+        "id": 28,
+        "name": "Kəngərli",
+        "parent_id": 0
+    },
+    {
+        "id": 29,
+        "name": "Laçın",
+        "parent_id": 0
+    },
+    {
+        "id": 30,
+        "name": "Lerik",
+        "parent_id": 0
+    },
+    {
+        "id": 31,
+        "name": "Lənkəran",
+        "parent_id": 0
+    },
+    {
+        "id": 32,
+        "name": "Masallı",
+        "parent_id": 0
+    },
+    {
+        "id": 33,
+        "name": "Mingəçevir",
+        "parent_id": 0
+    },
+    {
+        "id": 34,
+        "name": "Naftalan",
+        "parent_id": 0
+    },
+    {
+        "id": 35,
+        "name": "Naxçıvan",
+        "parent_id": 0
+    },
+    {
+        "id": 36,
+        "name": "Neftçala",
+        "parent_id": 0
+    },
+    {
+        "id": 37,
+        "name": "Oğuz",
+        "parent_id": 0
+    },
+    {
+        "id": 38,
+        "name": "Ordubad",
+        "parent_id": 0
+    },
+    {
+        "id": 39,
+        "name": "Qax",
+        "parent_id": 0
+    },
+    {
+        "id": 40,
+        "name": "Qazax",
+        "parent_id": 0
+    },
+    {
+        "id": 41,
+        "name": "Qobustan",
+        "parent_id": 0
+    },
+    {
+        "id": 42,
+        "name": "Quba",
+        "parent_id": 0
+    },
+    {
+        "id": 43,
+        "name": "Qubadlı",
+        "parent_id": 0
+    },
+    {
+        "id": 44,
+        "name": "Qusar",
+        "parent_id": 0
+    },
+    {
+        "id": 45,
+        "name": "Qəbələ",
+        "parent_id": 0
+    },
+    {
+        "id": 46,
+        "name": "Saatlı",
+        "parent_id": 0
+    },
+    {
+        "id": 47,
+        "name": "Sabirabad",
+        "parent_id": 0
+    },
+    {
+        "id": 48,
+        "name": "Şabran",
+        "parent_id": 0
+    },
+    {
+        "id": 49,
+        "name": "Şahbuz",
+        "parent_id": 0
+    },
+    {
+        "id": 50,
+        "name": "Salyan",
+        "parent_id": 0
+    },
+    {
+        "id": 51,
+        "name": "Şamaxı",
+        "parent_id": 0
+    },
+    {
+        "id": 52,
+        "name": "Samux",
+        "parent_id": 0
+    },
+    {
+        "id": 53,
+        "name": "Şirvan",
+        "parent_id": 0
+    },
+    {
+        "id": 54,
+        "name": "Siyəzən",
+        "parent_id": 0
+    },
+    {
+        "id": 55,
+        "name": "Sumqayıt",
+        "parent_id": 0
+    },
+    {
+        "id": 56,
+        "name": "Şuşa",
+        "parent_id": 0
+    },
+    {
+        "id": 57,
+        "name": "Sədərək",
+        "parent_id": 0
+    },
+    {
+        "id": 58,
+        "name": "Şəki",
+        "parent_id": 0
+    },
+    {
+        "id": 59,
+        "name": "Şəmkir",
+        "parent_id": 0
+    },
+    {
+        "id": 60,
+        "name": "Şərur",
+        "parent_id": 0
+    },
+    {
+        "id": 61,
+        "name": "Tovuz",
+        "parent_id": 0
+    },
+    {
+        "id": 62,
+        "name": "Tərtər",
+        "parent_id": 0
+    },
+    {
+        "id": 63,
+        "name": "Ucar",
+        "parent_id": 0
+    },
+    {
+        "id": 64,
+        "name": "Xaçmaz",
+        "parent_id": 0
+    },
+    {
+        "id": 65,
+        "name": "Xırdalan",
+        "parent_id": 0
+    },
+    {
+        "id": 66,
+        "name": "Xızı",
+        "parent_id": 0
+    },
+    {
+        "id": 67,
+        "name": "Xocalı",
+        "parent_id": 0
+    },
+    {
+        "id": 68,
+        "name": "Xocavənd",
+        "parent_id": 0
+    },
+    {
+        "id": 69,
+        "name": "Yardımlı",
+        "parent_id": 0
+    },
+    {
+        "id": 70,
+        "name": "Yevlax",
+        "parent_id": 0
+    },
+    {
+        "id": 71,
+        "name": "Zaqatala",
+        "parent_id": 0
+    },
+    {
+        "id": 72,
+        "name": "Zəngilan",
+        "parent_id": 0
+    },
+    {
+        "id": 73,
+        "name": "Zərdab",
+        "parent_id": 0
+    }, 
+    {
+        "id": 74,
+        "name": "Ağdam",
+        "parent_id": 2
+    }, 
+    {
+        "id": 75,
+        "name": "Astara",
+        "parent_id": 6
+    }, 
+    {
+        "id": 76,
+        "name": "Kəngərli",
+        "parent_id": 6
+    }, 
+    {
+        "id": 77,
+        "name": "Abşeron",
+        "parent_id": 8
+    }, 
+    {
+        "id": 78,
+        "name": "Binəqədi",
+        "parent_id": 8
+    }, 
+    {
+        "id": 79,
+        "name": "Xətai",
+        "parent_id": 8
+    }, 
+    {
+        "id": 80,
+        "name": "Xəzər",
+        "parent_id": 8
+    }, 
+    {
+        "id": 81,
+        "name": "Qaradağ",
+        "parent_id": 8
+    }, 
+    {
+        "id": 82,
+        "name": "Nərimanov",
+        "parent_id": 8
+    }, 
+    {
+        "id": 83,
+        "name": "Nəsimi",
+        "parent_id": 8
+    }, 
+    {
+        "id": 84,
+        "name": "Nizami",
+        "parent_id": 8
+    }, 
+    {
+        "id": 85,
+        "name": "Pirallahı",
+        "parent_id": 8
+    }, 
+    {
+        "id": 86,
+        "name": "Sabunçu",
+        "parent_id": 8
+    }, 
+    {
+        "id": 87,
+        "name": "Səbail",
+        "parent_id": 8
+    }, 
+    {
+        "id": 88,
+        "name": "Suraxanı",
+        "parent_id": 8
+    }, 
+    {
+        "id": 89,
+        "name": "Yasamal",
+        "parent_id": 8
+    }, 
+    {
+        "id": 90,
+        "name": "Gədəbəy",
+        "parent_id": 21
+    }, 
+    {
+        "id": 91,
+        "name": "Xaçmaz",
+        "parent_id": 64
+    }, 
+    {
+        "id": 92,
+        "name": "Nabran",
+        "parent_id": 64
+    }, 
+    {
+        "id": 93,
+        "name": "Babək",
+        "parent_id": 35
+    }, 
+    {
+        "id": 94,
+        "name": "Culfa",
+        "parent_id": 35
+    }, 
+    {
+        "id": 95,
+        "name": "Qıvraq",
+        "parent_id": 35
+    }, 
+    {
+        "id": 96,
+        "name": "Naxçıvan",
+        "parent_id": 35
+    }, 
+    {
+        "id": 97,
+        "name": "Ordubad",
+        "parent_id": 35
+    }, 
+    {
+        "id": 98,
+        "name": "Sədərək",
+        "parent_id": 35
+    }, 
+    {
+        "id": 99,
+        "name": "Şahbuz",
+        "parent_id": 35
+    }, 
+    {
+        "id": 100,
+        "name": "Şərur",
+        "parent_id": 35
+    }, 
+    {
+        "id": 101,
+        "name": "Quzanlı qəs",
+        "parent_id": 74
+    }, 
+    {
+        "id": 102,
+        "name": "Ceyranbatan",
+        "parent_id": 77
+    }, 
+    {
+        "id": 103,
+        "name": "Çiçək",
+        "parent_id": 77
+    }, 
+    {
+        "id": 104,
+        "name": "Digah",
+        "parent_id": 77
+    }, 
+    {
+        "id": 105,
+        "name": "Fatmayı",
+        "parent_id": 77
+    }, 
+    {
+        "id": 106,
+        "name": "Görədil",
+        "parent_id": 77
+    }, 
+    {
+        "id": 107,
+        "name": "Hökməli",
+        "parent_id": 77
+    }, 
+    {
+        "id": 108,
+        "name": "Köhnə Corat",
+        "parent_id": 77
+    }, 
+    {
+        "id": 109,
+        "name": "Qobu",
+        "parent_id": 77
+    }, 
+    {
+        "id": 110,
+        "name": "Babək",
+        "parent_id": 77
+    }, 
+    {
+        "id": 111,
+        "name": "Masazır",
+        "parent_id": 77
+    }, 
+    {
+        "id": 112,
+        "name": "Mehdiabad",
+        "parent_id": 77
+    }, 
+    {
+        "id": 113,
+        "name": "Məmmədli",
+        "parent_id": 77
+    }, 
+    {
+        "id": 114,
+        "name": "Novxanı",
+        "parent_id": 77
+    }, 
+    {
+        "id": 115,
+        "name": "Pirəkəşkül",
+        "parent_id": 77
+    }, 
+    {
+        "id": 116,
+        "name": "Saray",
+        "parent_id": 77
+    }, 
+    {
+        "id": 117,
+        "name": "Yeni Corat",
+        "parent_id": 77
+    }, 
+    {
+        "id": 118,
+        "name": "Zağulba",
+        "parent_id": 77
+    }, 
+    {
+        "id": 119,
+        "name": "2-ci Alatava",
+        "parent_id": 78
+    }, 
+    {
+        "id": 120,
+        "name": "28 May",
+        "parent_id": 78
+    }, 
+    {
+        "id": 121,
+        "name": "6-cı mikrorayon",
+        "parent_id": 78
+    }, 
+    {
+        "id": 122,
+        "name": "7-ci mikrorayon",
+        "parent_id": 78
+    }, 
+    {
+        "id": 123,
+        "name": "8-ci mikrorayon",
+        "parent_id": 78
+    }, 
+    {
+        "id": 124,
+        "name": "9-cu mikrorayon",
+        "parent_id": 78
+    }, 
+    {
+        "id": 125,
+        "name": "Biləcəri",
+        "parent_id": 78
+    },
+    {
+        "id": 126,
+        "name": "Binəqədi",
+        "parent_id": 78
+    },
+    {
+        "id": 127,
+        "name": "Xocəsən",
+        "parent_id": 78
+    },
+    {
+        "id": 128,
+        "name": "Xutor",
+        "parent_id": 78
+    },
+    {
+        "id": 129,
+        "name": "M.Ə.Rəsulzadə",
+        "parent_id": 78
+    },
+    {
+        "id": 130,
+        "name": "Sulutəpə",
+        "parent_id": 78
+    },
+    {
+        "id": 131,
+        "name": "Ağ şəhər",
+        "parent_id": 79
+    },
+    {
+        "id": 132,
+        "name": "Əhmədli",
+        "parent_id": 79
+    },
+    {
+        "id": 133,
+        "name": "Həzi Aslanov",
+        "parent_id": 79
+    },
+    {
+        "id": 134,
+        "name": "Köhnə Günəşli",
+        "parent_id": 79
+    },
+    {
+        "id": 135,
+        "name": "NZS",
+        "parent_id": 79
+    }
+    ,
+    {
+        "id": 136,
+        "name": "Binə",
+        "parent_id": 80
+    },
+    {
+        "id": 137,
+        "name": "Buzovna",
+        "parent_id": 80
+    },
+    {
+        "id": 138,
+        "name": "Dübəndi",
+        "parent_id": 80
+    },
+    {
+        "id": 139,
+        "name": "Gürgən",
+        "parent_id": 80
+    },
+    {
+        "id": 140,
+        "name": "Qala",
+        "parent_id": 80
+    },
+    {
+        "id": 141,
+        "name": "Mərdəkan",
+        "parent_id": 80
+    },
+    {
+        "id": 142,
+        "name": "Şağan",
+        "parent_id": 80
+    },
+    {
+        "id": 143,
+        "name": "Şimal DRES",
+        "parent_id": 80
+    },
+    {
+        "id": 144,
+        "name": "Şüvəlan",
+        "parent_id": 80
+    },
+    {
+        "id": 145,
+        "name": "Türkan",
+        "parent_id": 80
+    },
+    {
+        "id": 146,
+        "name": "Zirə",
+        "parent_id": 80
+    },
+    {
+        "id": 147,
+        "name": "Ələt",
+        "parent_id": 81
+    },
+    {
+        "id": 148,
+        "name": "Qızıldaş",
+        "parent_id": 81
+    },
+    {
+        "id": 135,
+        "name": "Qobustan",
+        "parent_id": 81
+    },
+    {
+        "id": 149,
+        "name": "Löbbatan",
+        "parent_id": 81
+    },
+    {
+        "id": 150,
+        "name": "Müşfiqabad",
+        "parent_id": 81
+    },
+    {
+        "id": 151,
+        "name": "Puta",
+        "parent_id": 81
+    },
+    {
+        "id": 152,
+        "name": "Sahil",
+        "parent_id": 81
+    },
+    {
+        "id": 153,
+        "name": "Səngəçal",
+        "parent_id": 81
+    },
+    {
+        "id": 154,
+        "name": "Şubani",
+        "parent_id": 81
+    },
+    {
+        "id": 155,
+        "name": "Böyük Şor",
+        "parent_id": 82
+    },
+    {
+        "id": 156,
+        "name": "1-ci mikrarayon",
+        "parent_id": 83
+    },
+    {
+        "id": 157,
+        "name": "2-ci mikrarayon",
+        "parent_id": 83
+    },
+    {
+        "id": 158,
+        "name": "3-cü mikrarayon",
+        "parent_id": 83
+    },
+    {
+        "id": 159,
+        "name": "4-cü mikrarayon",
+        "parent_id": 83
+    },
+    {
+        "id": 160,
+        "name": "5-ci mikrarayon",
+        "parent_id": 83
+    },
+    {
+        "id": 161,
+        "name": "Kubinka",
+        "parent_id": 83
+    },
+    {
+        "id": 162,
+        "name": "8-ci kilometr",
+        "parent_id": 84
+    },
+    {
+        "id": 163,
+        "name": "Keşlə",
+        "parent_id": 84
+    },
+    {
+        "id": 164,
+        "name": "Albalılıq",
+        "parent_id": 86
+    },
+    {
+        "id": 165,
+        "name": "Bakıxanov",
+        "parent_id": 86
+    },
+    {
+        "id": 166,
+        "name": "Balaxanı",
+        "parent_id": 86
+    },
+    {
+        "id": 167,
+        "name": "Bilgəh",
+        "parent_id": 86
+    },
+    {
+        "id": 168,
+        "name": "Kürdəxanı",
+        "parent_id": 86
+    },
+    {
+        "id": 169,
+        "name": "Maştağa",
+        "parent_id": 86
+    },
+    {
+        "id": 170,
+        "name": "Nardaran",
+        "parent_id": 86
+    },
+    {
+        "id": 171,
+        "name": "Pirşağı",
+        "parent_id": 86
+    },
+    {
+        "id": 172,
+        "name": "Ramana",
+        "parent_id": 86
+    },
+    {
+        "id": 173,
+        "name": "Sabunçu",
+        "parent_id": 86
+    },
+    {
+        "id": 174,
+        "name": "Savalan",
+        "parent_id": 86
+    },
+    {
+        "id": 175,
+        "name": "Yeni Balaxanı",
+        "parent_id": 86
+    },
+    {
+        "id": 176,
+        "name": "Yeni Ramana",
+        "parent_id": 86
+    },
+    {
+        "id": 177,
+        "name": "Zabrat",
+        "parent_id": 86
+    },
+    {
+        "id": 178,
+        "name": "20-ci sahə",
+        "parent_id": 87
+    },
+    {
+        "id": 179,
+        "name": "Badamdar",
+        "parent_id": 87
+    },
+    {
+        "id": 180,
+        "name": "Bayıl",
+        "parent_id": 87
+    },
+    {
+        "id": 181,
+        "name": "Bibi Heybət",
+        "parent_id": 87
+    },
+    {
+        "id": 182,
+        "name": "Şıxov",
+        "parent_id": 87
+    },
+    {
+        "id": 183,
+        "name": "Bahar",
+        "parent_id": 88
+    },
+    {
+        "id": 184,
+        "name": "Bülbülə",
+        "parent_id": 88
+    },
+    {
+        "id": 185,
+        "name": "Dədə Qorqud",
+        "parent_id": 88
+    },
+    {
+        "id": 186,
+        "name": "Əmircan",
+        "parent_id": 88
+    },
+    {
+        "id": 187,
+        "name": "Günəşli",
+        "parent_id": 88
+    },
+    {
+        "id": 188,
+        "name": "Hövsan",
+        "parent_id": 88
+    },
+    {
+        "id": 189,
+        "name": "Qaraçuxur",
+        "parent_id": 88
+    },
+    {
+        "id": 190,
+        "name": "Massiv A",
+        "parent_id": 88
+    },
+    {
+        "id": 191,
+        "name": "Massiv B",
+        "parent_id": 88
+    },
+    {
+        "id": 192,
+        "name": "Massiv D",
+        "parent_id": 88
+    },
+    {
+        "id": 193,
+        "name": "Massiv G",
+        "parent_id": 88
+    },
+    {
+        "id": 194,
+        "name": "Massiv V",
+        "parent_id": 88
+    },
+    {
+        "id": 195,
+        "name": "Suraxanı",
+        "parent_id": 88
+    },
+    {
+        "id": 196,
+        "name": "Şərq",
+        "parent_id": 88
+    },
+    {
+        "id": 197,
+        "name": "Yeni Günəşli",
+        "parent_id": 88
+    },
+    {
+        "id": 198,
+        "name": "Yeni Suraxanı",
+        "parent_id": 88
+    },
+    {
+        "id": 199,
+        "name": "Zığ",
+        "parent_id": 88
+    },
+    {
+        "id": 200,
+        "name": "Yasamal",
+        "parent_id": 89
+    },
+    {
+        "id": 201,
+        "name": "Yeni Yasamal",
+        "parent_id": 89
+    }
+]
