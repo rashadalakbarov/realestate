@@ -36,7 +36,9 @@ const Login = ({ setSession }) => {
     >
       <main className="w-100 m-auto" style={{ maxWidth: "330px" }}>
         <form onSubmit={handleSubmit}>
-          <h1 className="h3 mb-3 fw-normal">İstifadəçi Girişi</h1>
+          <h1 className="h3 mb-3 fw-normal text-center mb-4">
+            İstifadəçi Girişi
+          </h1>
 
           <div className="form-floating mb-3">
             <input
@@ -72,7 +74,7 @@ const Login = ({ setSession }) => {
               Şifrəni unutdum
             </label>
           </div>
-          <button className="btn btn-primary w-100 py-2" type="submit">
+          <button className="btn btn-primary w-100 py-2 mt-3" type="submit">
             Daxil ol
           </button>
 
