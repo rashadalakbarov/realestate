@@ -1,15 +1,168 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
+
+import PageTitle from "../components/page-title/PageTitle";
 
 const New = () => {
+  // formData: Formun verilerini saklamak için kullanılan state değişkenidir. Bu nesne, formdaki her bir alanın değerini saklar.
+  const [formData, setFormData] = useState({
+    username: "", // Kullanıcının adını saklar.
+    catPosition: "",
+    email: "",
+    phone: "",
+    buildCategory: "",
+    catBuySell: "",
+    country: "",
+    state: "",
+    city: "",
+    address: "",
+    area: "",
+    price: "",
+    additionalInfo: "",
+    images: [],
+  });
+
+  const [errors, setErrors] = useState({});
+  const [previewImages, setPreviewImages] = useState([]);
+
+  // name: Kontrol edilmesi gereken form alanının adı.
+  // value: Kontrol edilmesi gereken form alanının değeri.
+  const validateInput = (name, value) => {
+    switch (name) {
+      case "username":
+        if (!value) {
+          return "Adınız daxil edilməlidir";
+        }
+
+        const usernamePattern = /^[a-zA-Z\s]*$/;
+        if (!usernamePattern.test(value)) {
+          return "Ad yalnız hərflərdən və boşluqlardan ibarət olmalıdır";
+        }
+
+        break;
+      case "email":
+        if (!value) {
+          return "E-poçt adresiniz daxil edilməlidir";
+        }
+
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(value)) {
+          return "E-poçt adresində xəta var. Yenidən cəhd edin!";
+        }
+
+        break;
+      case "phone":
+        if (!value) {
+          return "Əlaqə nömrəniz daxil edilməldir";
+        }
+
+        const phonePattern = /^0\d{9}$/;
+        if (!phonePattern.test(value)) {
+          return "Telefon nömrəsi 0 ilə başlamalı və 10 rəqəmdən ibarət olmalıdır";
+        }
+
+        break;
+      case "buildCategory":
+        if (!value) {
+          return "Kateqoriya seçin";
+        }
+        break;
+      case "catBuySell":
+        if (!value) {
+          return "Boş buraxmayın";
+        }
+        break;
+      case "country":
+        if (!value) {
+          return "Şəhər seçin";
+        }
+        break;
+      case "state":
+        if (!value) {
+          return "Rayon seçin";
+        }
+        break;
+      case "address":
+        if (!value) {
+          return "Ünvan daxil edin";
+        }
+        break;
+      case "area":
+        if (!value) {
+          return "Sahə boş buraxılmamalıdır";
+        }
+        break;
+      case "price":
+        if (!value) {
+          return "Qiymət yazın";
+        }
+        break;
+      default:
+        return "";
+    }
+    return "";
+  };
+
+  const handleChange = (e) => {
+    const { name, value, files } = e.target;
+    setFormData({ ...formData, [name]: files ? files : value });
+    const error = validateInput(name, value);
+    setErrors({ ...errors, [name]: error });
+  };
+
+  const handleImageChange = (e) => {
+    const files = Array.from(e.target.files);
+    setFormData({ ...formData, images: files });
+
+    const imagePreviews = files.map((file) => URL.createObjectURL(file));
+    setPreviewImages(imagePreviews);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Final validation before submitting
+    const newErrors = {};
+    Object.keys(formData).forEach((key) => {
+      const error = validateInput(key, formData[key]);
+      if (error) {
+        newErrors[key] = error;
+      }
+    });
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
+    // Submit the form data
+    const data = new FormData();
+    Object.keys(formData).forEach((key) => {
+      if (key === "images") {
+        formData[key].forEach((file) => {
+          data.append("images[]", file);
+        });
+      } else {
+        data.append(key, formData[key]);
+      }
+    });
+
+    // try {
+    //   await axios.post("YOUR_LARAVEL_API_URL", data);
+    //   alert("Form submitted successfully");
+    // } catch (error) {
+    //   console.error("Error submitting form", error);
+    // }
+  };
+
   return (
     <section className="mt-3">
       <div className="container">
         <div className="row">
-          <h3>Elan Yerləşdir</h3>
+          <PageTitle title={"Elan Yerləşdir"} />
         </div>
         <form
-          action=""
-          method="POST"
+          onSubmit={handleSubmit}
           encType="multipart/form-data"
           autoComplete="off"
         >
@@ -20,18 +173,21 @@ const New = () => {
                 <div className="card-body">
                   <div className="mb-2">
                     <label htmlFor="username" className="form-label">
-                      Əlaqədar şəxs
-                      <sup className="text-danger fs-6 top-0">*</sup>
+                      Adınız
+                      <sup className="text-danger fs-6 top-0 ms-1">*</sup>
                     </label>
                     <input
                       type="text"
                       className="form-control"
                       id="username"
                       name="username"
-                      value=""
-                      required
+                      value={formData.username}
+                      onChange={handleChange}
+                      placeholder="Adınızı daxil edin"
                     />
-                    <span className="text-danger">Ad daxil edilməlidir</span>
+                    {errors.username && (
+                      <span className="text-danger">{errors.username}</span>
+                    )}
                   </div>
                   <div className="mb-2">
                     <div>
@@ -42,6 +198,8 @@ const New = () => {
                           name="catPosition"
                           id="inlineRadio1"
                           value="user"
+                          checked
+                          onChange={handleChange}
                         />
                         <label
                           className="form-check-label"
@@ -57,6 +215,7 @@ const New = () => {
                           name="catPosition"
                           id="inlineRadio2"
                           value="agent"
+                          onChange={handleChange}
                         />
                         <label
                           className="form-check-label"
@@ -66,7 +225,9 @@ const New = () => {
                         </label>
                       </div>
                     </div>
-                    <span className="text-danger">Sahə seçin</span>
+                    {errors.catPosition && (
+                      <span className="text-danger">{errors.catPosition}</span>
+                    )}
                   </div>
                   <div className="mb-2">
                     <label htmlFor="email" className="form-label">
@@ -77,14 +238,17 @@ const New = () => {
                       className="form-control"
                       id="email"
                       aria-describedby="emailHelp"
-                      value=""
                       name="email"
-                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="E-poçtunuzu daxil edin"
                     />
                     <div id="emailHelp" className="form-text">
                       E-poçtunuz heç bir halda qarşı tərəfə göstərilməyəcək.
                     </div>
-                    <span className="text-danger">E-poçt daxil edilməldir</span>
+                    {errors.email && (
+                      <span className="text-danger">{errors.email}</span>
+                    )}
                   </div>
                   <div className="mb-2">
                     <label htmlFor="phone" className="form-label">
@@ -95,13 +259,14 @@ const New = () => {
                       type="text"
                       className="form-control"
                       id="phone"
-                      value=""
+                      value={formData.phone}
+                      onChange={handleChange}
                       name="phone"
-                      required
+                      placeholder="0XX 1234567"
                     />
-                    <span className="text-danger">
-                      Əlaqə nömrəsi daxil edilməldir
-                    </span>
+                    {errors.phone && (
+                      <span className="text-danger">{errors.phone}</span>
+                    )}
                   </div>
                 </div>
               </div>
@@ -132,9 +297,9 @@ const New = () => {
                         <select
                           className="form-select"
                           id="buildCategory"
-                          value=""
+                          value={formData.buildCategory}
+                          onChange={handleChange}
                           name="buildCategory"
-                          required
                         >
                           <option value="" selected>
                             Kateqoriya seçin
@@ -148,7 +313,11 @@ const New = () => {
                           <option value="land">Torpaq</option>
                           <option value="object">Obyekt</option>
                         </select>
-                        <span className="text-danger">Kateqoriya seçin</span>
+                        {errors.buildCategory && (
+                          <span className="text-danger">
+                            {errors.buildCategory}
+                          </span>
+                        )}
                       </div>
                     </div>
                     <div className="col-12 col-md-6">
@@ -156,14 +325,18 @@ const New = () => {
                         <select
                           className="form-select"
                           name="catBuySell"
-                          value=""
+                          value={formData.catBuySell}
+                          onChange={handleChange}
                           id="catBuySell"
-                          required
                         >
                           <option value="buy">satıram</option>
                           <option value="rent">kirayə verirəm</option>
                         </select>
-                        <span className="text-danger">Boş buraxmayın</span>
+                        {errors.catBuySell && (
+                          <span className="text-danger">
+                            {errors.catBuySell}
+                          </span>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -177,13 +350,15 @@ const New = () => {
                         <select
                           className="form-select"
                           name="country"
-                          value=""
+                          value={formData.country}
+                          onChange={handleChange}
                           id="country"
-                          required
                         >
                           <option value="">Şəhər seçin</option>
                         </select>
-                        <span className="text-danger">Şəhər seçin</span>
+                        {errors.country && (
+                          <span className="text-danger">{errors.country}</span>
+                        )}
                       </div>
                     </div>
                     <div className="col-12 col-md-4">
@@ -195,14 +370,16 @@ const New = () => {
                         <select
                           className="form-select"
                           id="state"
-                          value=""
+                          value={formData.state}
+                          onChange={handleChange}
+                          disabled={!formData.country}
                           name="state"
-                          disabled
-                          required
                         >
                           <option value="">Rayon seçin</option>
                         </select>
-                        <span className="text-danger">Rayon seçin</span>
+                        {errors.state && (
+                          <span className="text-danger">{errors.state}</span>
+                        )}
                       </div>
                     </div>
                     <div className="col-12 col-md-4">
@@ -213,9 +390,10 @@ const New = () => {
                         <select
                           className="form-select"
                           id="city"
-                          value=""
-                          name="email"
-                          disabled
+                          value={formData.city}
+                          onChange={handleChange}
+                          disabled={!formData.state}
+                          name="city"
                         >
                           <option value="">Qəsəbə seçin</option>
                         </select>
@@ -230,11 +408,13 @@ const New = () => {
                       type="text"
                       className="form-control"
                       id="address"
-                      value=""
+                      value={formData.address}
+                      onChange={handleChange}
                       name="address"
-                      required
                     />
-                    <span className="text-danger">Ünvan daxil edin</span>
+                    {errors.address && (
+                      <span className="text-danger">{errors.address}</span>
+                    )}
                   </div>
                   <div id="hidden_section" style={{ display: "none" }}></div>
                   <div className="mb-2">
@@ -245,14 +425,14 @@ const New = () => {
                     <input
                       type="text"
                       className="form-control"
-                      value=""
+                      value={formData.area}
+                      onChange={handleChange}
                       name="area"
                       id="area"
-                      required
                     />
-                    <span className="text-danger">
-                      Sahə boş buraxılmamalıdır
-                    </span>
+                    {errors.area && (
+                      <span className="text-danger">{errors.area}</span>
+                    )}
                   </div>
                   <div className="mb-2">
                     <label htmlFor="price" className="form-label">
@@ -262,11 +442,13 @@ const New = () => {
                       type="text"
                       className="form-control"
                       id="price"
-                      value=""
+                      value={formData.price}
+                      onChange={handleChange}
                       name="price"
-                      required
                     />
-                    <span className="text-danger">Qiymət yazın</span>
+                    {errors.price && (
+                      <span className="text-danger">{errors.price}</span>
+                    )}
                   </div>
                   <div className="mb-3">
                     <label
@@ -279,6 +461,9 @@ const New = () => {
                       className="form-control"
                       id="exampleFormControlTextarea1"
                       rows="7"
+                      name="additionalInfo"
+                      value={formData.additionalInfo}
+                      onChange={handleChange}
                     ></textarea>
                   </div>
                   <div className="mb-3">
@@ -290,15 +475,22 @@ const New = () => {
                       className="form-control"
                       type="file"
                       id="images"
-                      name="images[]"
+                      name="images"
                       multiple
-                      onchange="image_select()"
+                      onChange={handleImageChange}
                     />
-                    <span className="text-danger">
-                      Ən az 3 ədəd şəkil seçilməlidir
-                    </span>
+
+                    {errors.images && (
+                      <span className="text-danger">{errors.images}</span>
+                    )}
                   </div>
-                  <ul className="add-img" id="preview_image"></ul>
+                  <ul className="add-img" id="preview_image">
+                    {previewImages.map((image, index) => (
+                      <li key={index}>
+                        <img src={image} alt={`preview ${index}`} />
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </div>
