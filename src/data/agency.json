@@ -1,0 +1,49 @@
+[
+    {
+        "id": 1,
+        "title": "Fortuna-N",
+        "offer": 30,
+        "description": "Bu birinci agentliktir.",
+        "image": "Fortuna Logo.jpg"
+    },
+
+    {
+        "id": 2,
+        "title": "Bizim Evlərimiz",
+        "offer": 95,
+        "description": "Bu ikinci agentliktir.",
+        "image": "rehouselogo.jpg"
+    },
+    
+    {
+        "id": 3,
+        "title": "Yeni Park N1",
+        "offer": 22,
+        "description": "Bu ucuncu agentliktir.",
+        "image": "3785_iDH3h0WzMp2SlSp-lwn34Q.jpg"
+    },
+    
+    {
+        "id": 4,
+        "title": "Avenue Baku",
+        "offer": 149,
+        "description": "Bu dorduncu agentliktir.",
+        "image": "64677_XEKjwmAveF1J7d42VxCbsw.jpg"
+    },
+    
+    {
+        "id": 5,
+        "title": "Silver Estate",
+        "offer": 219,
+        "description": "Bu besinci agentliktir.",
+        "image": "3777_8LhT63dzfDV9wJgJfGin9Q.jpg"
+    },
+    
+    {
+        "id": 6,
+        "title": "Real Əmlak Xətai",
+        "offer": 407,
+        "description": "Bu altinci agentliktir.",
+        "image": "xirdalanemlak.jpg"
+    }
+]

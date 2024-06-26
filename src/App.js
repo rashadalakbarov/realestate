@@ -8,7 +8,8 @@ import Footer from "./components/footer/Footer";
 import Home from "./pages/Home";
 import AlqiSatqi from "./pages/AlqiSatqi";
 import Kiraye from "./pages/Kiraye";
-import Agents from "./pages/Agents";
+import Agency from "./pages/Agency";
+import AgencyDetail from "./pages/AgencyDetail";
 import ResidentialComplexes from "./pages/ResidentialComplexes";
 import Bookmarks from "./pages/Bookmarks";
 import New from "./pages/New";
@@ -47,7 +48,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="alqi-satqi" element={<AlqiSatqi />} />
           <Route path="kiraye" element={<Kiraye />} />
-          <Route path="agentlikler" element={<Agents />} />
+          <Route path="agentlikler" element={<Agency />} />
+          <Route path="/agentlik/:id" element={<AgencyDetail />} />
           <Route
             path="yasayis-kompleksleri"
             element={<ResidentialComplexes />}

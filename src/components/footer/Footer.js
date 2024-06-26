@@ -7,7 +7,7 @@ import config from "../../data/config.json";
 const Footer = () => {
   const socialNetworks = config.social_networks;
   return (
-    <footer>
+    <footer className="mt-5">
       <div className="container">
         <div className="d-flex align-items-center justify-content-center py-3 border-top flex-wrap">
           <Link to={"/about"} className="me-3 text-muted text-decoration-none">

@@ -1,0 +1,9 @@
+@media screen and (max-width: 767px) {
+  .agency-card {
+    padding: 5px;
+    text-align: center;
+  }
+  .agency-card img {
+    object-fit: initial !important;
+  }
+}
