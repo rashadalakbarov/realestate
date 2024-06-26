@@ -1,0 +1,55 @@
+[
+    {
+        "id": 1,
+        "title": "Fortuna-N",
+        "price": 300000,
+        "status": 1,
+        "description": "Bu birinci agentliktir.",
+        "image": "IMG-20230321-WA0002.jpg"
+    },
+
+    {
+        "id": 2,
+        "title": "Bizim Evlərimiz",
+        "price": 95000,
+        "status": 2,
+        "description": "Bu ikinci agentliktir.",
+        "image": "IMG-20230321-WA0003.jpg"
+    },
+    
+    {
+        "id": 3,
+        "title": "Yeni Park N1",
+        "price": 220000,
+        "status": 1,
+        "description": "Bu ucuncu agentliktir.",
+        "image": "IMG-20230321-WA0004.jpg"
+    },
+    
+    {
+        "id": 4,
+        "title": "Avenue Baku",
+        "price": 1490,
+        "status": 2,
+        "description": "Bu dorduncu agentliktir.",
+        "image": "IMG-20230321-WA0005.jpg"
+    },
+    
+    {
+        "id": 5,
+        "title": "Silver Estate",
+        "price": 21900,
+        "status": 1,
+        "description": "Bu besinci agentliktir.",
+        "image": "IMG-20230321-WA0006.jpg"
+    },
+    
+    {
+        "id": 6,
+        "title": "Real Əmlak Xətai",
+        "price": 40700,
+        "status": null,
+        "description": "Bu altinci agentliktir.",
+        "image": "IMG-20230321-WA0007.jpg"
+    }
+]

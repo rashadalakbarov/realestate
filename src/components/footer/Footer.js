@@ -25,8 +25,14 @@ const Footer = () => {
           >
             Məxfilik siyasəti
           </Link>
-          <Link to={"/advertise"} className="text-muted text-decoration-none">
+          <Link
+            to={"/advertise"}
+            className="me-3 text-muted text-decoration-none"
+          >
             Reklam yerləşdirin
+          </Link>
+          <Link to={"/contact"} className="text-muted text-decoration-none">
+            Bizimlə əlaqə
           </Link>
         </div>
         <div className="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">

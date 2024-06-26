@@ -17,6 +17,10 @@ import About from "./pages/About";
 import TermsConditions from "./pages/TermsConditions";
 import Privacy from "./pages/Privacy";
 import Advertise from "./pages/Advertise";
+import Contact from "./pages/Contact";
+import Detail from "./pages/Detail";
+
+// profile
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Logout from "./pages/Logout";
@@ -50,6 +54,7 @@ function App() {
           <Route path="kiraye" element={<Kiraye />} />
           <Route path="agentlikler" element={<Agency />} />
           <Route path="/agentlik/:id" element={<AgencyDetail />} />
+          <Route path="/detail/:id" element={<Detail />} />
           <Route
             path="yasayis-kompleksleri"
             element={<ResidentialComplexes />}
@@ -60,6 +65,7 @@ function App() {
           <Route path="terms-and-conditions" element={<TermsConditions />} />
           <Route path="privacy" element={<Privacy />} />
           <Route path="advertise" element={<Advertise />} />
+          <Route path="contact" element={<Contact />} />
           <Route
             path="login"
             element={
