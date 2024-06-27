@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 
 import PageTitle from "../components/page-title/PageTitle";
+import UserProfile from "../components/user-profile/UserProfile";
+import Location from "../components/location/Location";
+import ImagesAdd from "../components/images-add/ImagesAdd";
 
 const New = () => {
   // formData: Formun verilerini saklamak için kullanılan state değişkenidir. Bu nesne, formdaki her bir alanın değerini saklar.
@@ -23,7 +26,6 @@ const New = () => {
   });
 
   const [errors, setErrors] = useState({});
-  const [previewImages, setPreviewImages] = useState([]);
 
   // name: Kontrol edilmesi gereken form alanının adı.
   // value: Kontrol edilmesi gereken form alanının değeri.
@@ -77,11 +79,6 @@ const New = () => {
           return "Şəhər seçin";
         }
         break;
-      case "state":
-        if (!value) {
-          return "Rayon seçin";
-        }
-        break;
       case "address":
         if (!value) {
           return "Ünvan daxil edin";
@@ -104,18 +101,14 @@ const New = () => {
   };
 
   const handleChange = (e) => {
-    const { name, value, files } = e.target;
-    setFormData({ ...formData, [name]: files ? files : value });
+    const { name, value } = e.target;
     const error = validateInput(name, value);
-    setErrors({ ...errors, [name]: error });
+    setErrors((prevErrors) => ({ ...prevErrors, [name]: error }));
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleImageChange = (e) => {
-    const files = Array.from(e.target.files);
-    setFormData({ ...formData, images: files });
-
-    const imagePreviews = files.map((file) => URL.createObjectURL(file));
-    setPreviewImages(imagePreviews);
+  const handleImageChange = (files) => {
+    setFormData((prevData) => ({ ...prevData, images: files }));
   };
 
   const handleSubmit = async (e) => {
@@ -168,108 +161,12 @@ const New = () => {
         >
           <div className="row mt-4">
             <div className="col-12 col-xl-6 order-2 order-xl-1">
-              <div className="card text-dark bg-light mb-3">
-                <div className="card-header">İstifadəçi Məlumatları</div>
-                <div className="card-body">
-                  <div className="mb-2">
-                    <label htmlFor="username" className="form-label">
-                      Adınız
-                      <sup className="text-danger fs-6 top-0 ms-1">*</sup>
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="username"
-                      name="username"
-                      value={formData.username}
-                      onChange={handleChange}
-                      placeholder="Adınızı daxil edin"
-                    />
-                    {errors.username && (
-                      <span className="text-danger">{errors.username}</span>
-                    )}
-                  </div>
-                  <div className="mb-2">
-                    <div>
-                      <div className="form-check form-check-inline">
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="catPosition"
-                          id="inlineRadio1"
-                          value="user"
-                          checked
-                          onChange={handleChange}
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="inlineRadio1"
-                        >
-                          Öz elanımı yerləşdirirəm
-                        </label>
-                      </div>
-                      <div className="form-check form-check-inline">
-                        <input
-                          className="form-check-input"
-                          type="radio"
-                          name="catPosition"
-                          id="inlineRadio2"
-                          value="agent"
-                          onChange={handleChange}
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="inlineRadio2"
-                        >
-                          Mən vasitəçiyəm (agent)
-                        </label>
-                      </div>
-                    </div>
-                    {errors.catPosition && (
-                      <span className="text-danger">{errors.catPosition}</span>
-                    )}
-                  </div>
-                  <div className="mb-2">
-                    <label htmlFor="email" className="form-label">
-                      E-poçt <sup className="text-danger fs-6 top-0">*</sup>
-                    </label>
-                    <input
-                      type="email"
-                      className="form-control"
-                      id="email"
-                      aria-describedby="emailHelp"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="E-poçtunuzu daxil edin"
-                    />
-                    <div id="emailHelp" className="form-text">
-                      E-poçtunuz heç bir halda qarşı tərəfə göstərilməyəcək.
-                    </div>
-                    {errors.email && (
-                      <span className="text-danger">{errors.email}</span>
-                    )}
-                  </div>
-                  <div className="mb-2">
-                    <label htmlFor="phone" className="form-label">
-                      Telefon
-                      <sup className="text-danger fs-6 top-0">*</sup>
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      name="phone"
-                      placeholder="0XX 1234567"
-                    />
-                    {errors.phone && (
-                      <span className="text-danger">{errors.phone}</span>
-                    )}
-                  </div>
-                </div>
-              </div>
+              <UserProfile
+                formData={formData}
+                handleChange={handleChange}
+                errors={errors}
+              />
+
               <p className="mb-0 w-75">
                 Elan yerləşdirərək, Siz bina.az-ın
                 <a href="#"> İstifadəçi razılaşması</a> ilə razı olduğunuzu
@@ -329,6 +226,7 @@ const New = () => {
                           onChange={handleChange}
                           id="catBuySell"
                         >
+                          <option value=""> </option>
                           <option value="buy">satıram</option>
                           <option value="rent">kirayə verirəm</option>
                         </select>
@@ -340,66 +238,13 @@ const New = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="row">
-                    <div className="col-12 col-md-4">
-                      <div className="mb-2">
-                        <label htmlFor="country" className="form-label">
-                          Şəhər
-                          <sup className="text-danger fs-6 top-0">*</sup>
-                        </label>
-                        <select
-                          className="form-select"
-                          name="country"
-                          value={formData.country}
-                          onChange={handleChange}
-                          id="country"
-                        >
-                          <option value="">Şəhər seçin</option>
-                        </select>
-                        {errors.country && (
-                          <span className="text-danger">{errors.country}</span>
-                        )}
-                      </div>
-                    </div>
-                    <div className="col-12 col-md-4">
-                      <div className="mb-2">
-                        <label htmlFor="state" className="form-label">
-                          Rayon
-                          <sup className="text-danger fs-6 top-0">*</sup>
-                        </label>
-                        <select
-                          className="form-select"
-                          id="state"
-                          value={formData.state}
-                          onChange={handleChange}
-                          disabled={!formData.country}
-                          name="state"
-                        >
-                          <option value="">Rayon seçin</option>
-                        </select>
-                        {errors.state && (
-                          <span className="text-danger">{errors.state}</span>
-                        )}
-                      </div>
-                    </div>
-                    <div className="col-12 col-md-4">
-                      <div className="mb-2">
-                        <label htmlFor="city" className="form-label">
-                          Qəsəbə
-                        </label>
-                        <select
-                          className="form-select"
-                          id="city"
-                          value={formData.city}
-                          onChange={handleChange}
-                          disabled={!formData.state}
-                          name="city"
-                        >
-                          <option value="">Qəsəbə seçin</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
+
+                  <Location
+                    formData={formData}
+                    handleChange={handleChange}
+                    errors={errors}
+                  />
+
                   <div className="mb-2">
                     <label htmlFor="address" className="form-label">
                       Ünvan <sup className="text-danger fs-6 top-0">*</sup>
@@ -466,31 +311,8 @@ const New = () => {
                       onChange={handleChange}
                     ></textarea>
                   </div>
-                  <div className="mb-3">
-                    <label htmlFor="images" className="form-label">
-                      Şəkillər
-                      <sup className="text-danger fs-6 top-0">*</sup>
-                    </label>
-                    <input
-                      className="form-control"
-                      type="file"
-                      id="images"
-                      name="images"
-                      multiple
-                      onChange={handleImageChange}
-                    />
 
-                    {errors.images && (
-                      <span className="text-danger">{errors.images}</span>
-                    )}
-                  </div>
-                  <ul className="add-img" id="preview_image">
-                    {previewImages.map((image, index) => (
-                      <li key={index}>
-                        <img src={image} alt={`preview ${index}`} />
-                      </li>
-                    ))}
-                  </ul>
+                  <ImagesAdd handleImageChange={handleImageChange} />
                 </div>
               </div>
             </div>
