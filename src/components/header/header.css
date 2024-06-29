@@ -1,9 +1,0 @@
-.navbar-toggler:focus {
-  box-shadow: none;
-}
-
-.navbar-light .navbar-nav .nav-link.active,
-.navbar-light .navbar-nav .show > .nav-link,
-.navbar-light .nav-item:hover .nav-link {
-  color: var(--main-color);
-}

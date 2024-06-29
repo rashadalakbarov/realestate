@@ -2,29 +2,28 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { useEffect, useState } from "react";
 
-import Header from "./components/header/Header";
-import Footer from "./components/footer/Footer";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
-import Home from "./pages/Home";
-import AlqiSatqi from "./pages/AlqiSatqi";
-import Kiraye from "./pages/Kiraye";
-import Agency from "./pages/Agency";
-import AgencyDetail from "./pages/AgencyDetail";
-import ResidentialComplexes from "./pages/ResidentialComplexes";
-import Bookmarks from "./pages/Bookmarks";
-import New from "./pages/New";
-import About from "./pages/About";
-import TermsConditions from "./pages/TermsConditions";
-import Privacy from "./pages/Privacy";
-import Advertise from "./pages/Advertise";
-import Contact from "./pages/Contact";
-import Detail from "./pages/Detail";
+import Home from "./pages/Home/Home";
+import AlqiSatqi from "./pages/Alqi-Satqi/AlqiSatqi";
+import Kiraye from "./pages/Kiraye/Kiraye";
+import Agency from "./pages/Agency/Agency";
+import AgencyDetail from "./pages/Agency-Detail/AgencyDetail";
+import ResidentialComplexes from "./pages/Residential-Complexes/ResidentialComplexes";
+import Bookmarks from "./pages/Bookmarks/Bookmarks";
+import New from "./pages/New/New";
+import About from "./pages/About/About";
+import TermsConditions from "./pages/Terms-Conditions/TermsConditions";
+import Privacy from "./pages/Privacy/Privacy";
+import Advertise from "./pages/Advertise/Advertise";
+import Contact from "./pages/Contact/Contact";
+import Detail from "./pages/Detail/Detail";
 
 // profile
-import Login from "./pages/Login";
-import Profile from "./pages/Profile";
-import Logout from "./pages/Logout";
-import NoPage from "./pages/NoPage";
+import Login from "./pages/Login/Login";
+import Profile from "./pages/Profile/Profile";
+import NoPage from "./pages/NoPage/NoPage";
 
 function App() {
   const [session, setSession] = useState(null);
@@ -86,7 +85,6 @@ function App() {
               )
             }
           />
-          <Route path="logout" element={<Logout />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
