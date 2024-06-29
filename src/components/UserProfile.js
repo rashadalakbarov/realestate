@@ -32,7 +32,6 @@ const UserProfile = ({ formData, handleChange, errors }) => {
                 name="catPosition"
                 id="inlineRadio1"
                 value="user"
-                checked
                 onChange={handleChange}
               />
               <label className="form-check-label" htmlFor="inlineRadio1">

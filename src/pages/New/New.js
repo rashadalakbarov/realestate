@@ -50,6 +50,11 @@ const New = () => {
         }
 
         break;
+      case "catPosition": // Example for radio button validation
+        if (!value) {
+          return "İstifadəçi kateqoriya mövqeyi seçilməlidir";
+        }
+        break;
       case "email":
         if (!value) {
           return "E-poçt adresiniz daxil edilməlidir";
