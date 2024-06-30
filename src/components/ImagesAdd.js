@@ -12,7 +12,6 @@ const ImagesAdd = ({ formData, errors }) => {
     localStorage.setItem("images", JSON.stringify(images));
 
     if (images.length > 3) {
-      console.log(images.length);
       setErrorsData("");
     }
   }, [images]);

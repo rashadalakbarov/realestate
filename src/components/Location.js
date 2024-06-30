@@ -1,15 +1,26 @@
 import React, { useEffect, useState } from "react";
 import country_state_city from "../data/country_state_city.json";
 
-const Location = ({ formData, handleChange, errors }) => {
+const Location = ({ formData, errors, handleChange }) => {
+  // country
   const [countries, setCountries] = useState([]);
+  const [selectedCountry, setSelectedCountry] = useState(
+    formData.country || ""
+  );
+
+  // state
   const [states, setStates] = useState([]);
-  const [cities, setCities] = useState([]);
-  const [selectedCountry, setSelectedCountry] = useState("");
-  const [selectedState, setSelectedState] = useState("");
-  const [selectedCity, setSelectedCity] = useState("");
+  const [selectedState, setSelectedState] = useState(formData.state || "");
   const [stateRequired, setStateRequired] = useState(false);
+  const [errorState, setErrorState] = useState("");
+
+  // city
+  const [cities, setCities] = useState([]);
+  const [selectedCity, setSelectedCity] = useState(formData.city || "");
   const [cityRequired, setCityRequired] = useState(false);
+  const [errorCity, setErrorCity] = useState("");
+
+  console.log(formData.country);
 
   useEffect(() => {
     // Get countries
@@ -25,14 +36,25 @@ const Location = ({ formData, handleChange, errors }) => {
       const statesData = country_state_city.filter(
         (item) => item.parent_id === parseInt(selectedCountry)
       );
+
       setStates(statesData);
+
+      if (statesData.length > 0) {
+        setStateRequired(true);
+        setErrorState("Rayon seçin");
+      } else {
+        setStateRequired(false);
+        setErrorState("");
+      }
       setSelectedState("");
       setCities([]);
-      setStateRequired(statesData.length > 0); // Check if states exist for the selected country
+
+      handleChange({ target: { name: "country", value: selectedCountry } });
     } else {
       setStates([]);
-      setCities([]);
       setStateRequired(false);
+
+      setCities([]);
     }
   }, [selectedCountry]);
 
@@ -42,14 +64,44 @@ const Location = ({ formData, handleChange, errors }) => {
       const citiesData = country_state_city.filter(
         (item) => item.parent_id === parseInt(selectedState)
       );
+
       setCities(citiesData);
+
+      if (citiesData.length > 0) {
+        setCityRequired(true);
+        setErrorCity("Qəsəbə seçin");
+      } else {
+        setCityRequired(false);
+        setErrorCity("");
+      }
+
       setSelectedCity("");
-      setCityRequired(citiesData.length > 0); // Check if cities exist for the selected state
+
+      handleChange({ target: { name: "state", value: selectedState } });
     } else {
       setCities([]);
       setCityRequired(false);
     }
   }, [selectedState]);
+
+  useEffect(() => {
+    handleChange({ target: { name: "city", value: selectedCity } });
+  }, [selectedCity]);
+
+  const handleCountryChange = (e) => {
+    const value = e.target.value;
+    setSelectedCountry(value);
+  };
+
+  const handleStateChange = (e) => {
+    const value = e.target.value;
+    setSelectedState(value);
+  };
+
+  const handleCityChange = (e) => {
+    const value = e.target.value;
+    setSelectedCity(value);
+  };
 
   return (
     <div className="row">
@@ -64,7 +116,7 @@ const Location = ({ formData, handleChange, errors }) => {
             name="country"
             id="country"
             value={selectedCountry}
-            onChange={(e) => setSelectedCountry(e.target.value)}
+            onChange={handleCountryChange}
           >
             <option value="">Şəhər seçin</option>
             {countries.map((country) => (
@@ -89,7 +141,7 @@ const Location = ({ formData, handleChange, errors }) => {
             id="state"
             name="state"
             value={selectedState}
-            onChange={(e) => setSelectedState(e.target.value)}
+            onChange={handleStateChange}
             disabled={!selectedCountry}
             required={stateRequired}
           >
@@ -100,7 +152,7 @@ const Location = ({ formData, handleChange, errors }) => {
               </option>
             ))}
           </select>
-          {errors.state && <span className="text-danger">{errors.state}</span>}
+          {stateRequired && <span className="text-danger">{errorState}</span>}
         </div>
       </div>
       <div className="col-12 col-md-4">
@@ -114,7 +166,7 @@ const Location = ({ formData, handleChange, errors }) => {
             id="city"
             name="city"
             value={selectedCity}
-            onChange={(e) => setSelectedCity(e.target.value)}
+            onChange={handleCityChange}
             disabled={!selectedState}
             required={cityRequired}
           >
@@ -125,6 +177,7 @@ const Location = ({ formData, handleChange, errors }) => {
               </option>
             ))}
           </select>
+          {cityRequired && <span className="text-danger">{errorCity}</span>}
         </div>
       </div>
     </div>

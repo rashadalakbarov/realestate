@@ -85,6 +85,11 @@ const New = () => {
         if (!value) {
           return "Otaq sayı seçin";
         }
+
+        const pricePattern5 = /^\d+$/;
+        if (!pricePattern5.test(value)) {
+          return "Otaq sayı yalnız rəqəmlərdən ibarət olmalıdır";
+        }
         break;
       case "repair":
         if (!value) {
@@ -100,10 +105,20 @@ const New = () => {
         if (!value) {
           return "Mərtəbə seçin";
         }
+
+        const pricePattern3 = /^\d+$/;
+        if (!pricePattern3.test(value)) {
+          return "Mərtəbə yalnız rəqəmlərdən ibarət olmalıdır";
+        }
         break;
       case "floorCount":
         if (!value) {
           return "Mərtəbə sayı seçin";
+        }
+
+        const pricePattern4 = /^\d+$/;
+        if (!pricePattern4.test(value)) {
+          return "Mərtəbə sayı yalnız rəqəmlərdən ibarət olmalıdır";
         }
         break;
       case "catBuySell":
@@ -315,6 +330,7 @@ const New = () => {
                     formData={formData}
                     handleChange={handleChange}
                     errors={errors}
+                    validateInput={validateInput}
                   />
 
                   <div className="mb-2">
