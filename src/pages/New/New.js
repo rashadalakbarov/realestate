@@ -24,7 +24,6 @@ const New = () => {
     price: "",
     additionalInfo: "",
     images: [],
-    // new
     roomCount: "",
     floor: "",
     floorCount: "",
@@ -157,6 +156,14 @@ const New = () => {
           return "Torpaq sahəsi yalnız rəqəmlərdən ibarət olmalıdır";
         }
         break;
+      case "images":
+        if (value.length < 4) {
+          return "Ən azı 4 şəkil əlavə edilməlidir";
+        }
+        if (value.length > 30) {
+          return "Ən çox 30 şəkil əlavə edilə bilər";
+        }
+        break;
       default:
         return "";
     }
@@ -168,10 +175,6 @@ const New = () => {
     const error = validateInput(name, value);
     setErrors((prevErrors) => ({ ...prevErrors, [name]: error }));
     setFormData((prevData) => ({ ...prevData, [name]: value }));
-  };
-
-  const handleImageChange = (files) => {
-    setFormData((prevData) => ({ ...prevData, images: files }));
   };
 
   const handleSubmit = async (e) => {
@@ -381,7 +384,7 @@ const New = () => {
                     ></textarea>
                   </div>
 
-                  <ImagesAdd handleImageChange={handleImageChange} />
+                  <ImagesAdd formData={formData} errors={errors} />
                 </div>
               </div>
             </div>
