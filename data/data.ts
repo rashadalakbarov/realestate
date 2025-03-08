@@ -1,4 +1,37 @@
-export const properties = [
+export const categoryTypeData = [
+    {
+      id: 1,
+      icon: "/images/category/a1.png",
+      type: "House",
+      number: 12,
+    },
+    {
+      id: 2,
+      icon: "/images/category/a2.png",
+      type: "Appartments",
+      number: 22,
+    },
+    {
+      id: 3,
+      icon: "/images/category/a3.png",
+      type: "Office",
+      number: 14,
+    },
+    {
+      id: 4,
+      icon: "/images/category/a4.png",
+      type: "Villa",
+      number: 9,
+    },
+    {
+      id: 5,
+      icon: "/images/category/a5.png",
+      type: "TownHouse",
+      number: 12,
+    },
+];
+
+export const propertiesData = [
     {
         id: 1,
         propertyName: "Equestrian Family Home",
@@ -7,7 +40,7 @@ export const properties = [
         bathrooms: 2,
         size: 1200,
         price: 45000,
-        imageUrl: "/images/p1.jpg",
+        imageUrl: "/images/properties/p1.jpg",
     },
     {
         id: 2,
@@ -17,7 +50,7 @@ export const properties = [
         bathrooms: 1,
         size: 950,
         price: 50000,
-        imageUrl: "/images/p2.jpg",
+        imageUrl: "/images/properties/p2.jpg",
     },
     {
         id: 3,
@@ -27,7 +60,7 @@ export const properties = [
         bathrooms: 2,
         size: 1300,
         price: 60000,
-        imageUrl: "/images/p3.jpg",
+        imageUrl: "/images/properties/p3.jpg",
     },
     {
         id: 4,
@@ -37,7 +70,7 @@ export const properties = [
         bathrooms: 1,
         size: 800,
         price: 75000,
-        imageUrl: "/images/p4.jpg",
+        imageUrl: "/images/properties/p4.jpg",
     },
     {
         id: 5,
@@ -47,7 +80,7 @@ export const properties = [
         bathrooms: 3,
         size: 2000,
         price: 90000,
-        imageUrl: "/images/p5.jpg",
+        imageUrl: "/images/properties/p5.jpg",
     },
     {
         id: 6,
@@ -57,6 +90,6 @@ export const properties = [
         bathrooms: 1,
         size: 700,
         price: 48000,
-        imageUrl: "/images/p6.jpg",
+        imageUrl: "/images/properties/p6.jpg",
     },
 ];

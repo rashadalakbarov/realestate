@@ -59,7 +59,7 @@ const Header = () => {
   return (
     <div>
         {/* Navbar */}
-        <div className={`fixed ${navBg ? "bg-gray-800" : "" } h-[10vh] z-[100]  w-full transition-all duration-200 bg-gray-700`}>
+        <div className={`fixed ${navBg ? "bg-gray-800" : "" } h-[10vh] z-[100]  w-full transition-all duration-200`}>
             <div className='flex items-center h-full justify-between w-[95%] sm:w-[90%] xl:w-[80%] mx-auto'>
                 {/* LOGO */}
                 <div className='flex items-center space-x-2 '>
