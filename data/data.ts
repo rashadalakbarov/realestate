@@ -93,3 +93,42 @@ export const propertiesData = [
         imageUrl: "/images/properties/p6.jpg",
     },
 ];
+
+export const cities = [
+  {
+    id: 1,
+    image: "/images/cities/c1.jpg",
+    cityName: "New York",
+    numberOfProperties: 120,
+  },
+  {
+    id: 2,
+    image: "/images/cities/c2.jpg",
+    cityName: "Los Angeles",
+    numberOfProperties: 85,
+  },
+  {
+    id: 3,
+    image: "/images/cities/c3.jpg",
+    cityName: "Chicago",
+    numberOfProperties: 95,
+  },
+  {
+    id: 4,
+    image: "/images/cities/c4.jpg",
+    cityName: "San Francisco",
+    numberOfProperties: 60,
+  },
+  {
+    id: 5,
+    image: "/images/cities/c5.jpg",
+    cityName: "Miami",
+    numberOfProperties: 70,
+  },
+  {
+    id: 6,
+    image: "/images/cities/c6.jpg",
+    cityName: "Boston",
+    numberOfProperties: 50,
+  },
+];
