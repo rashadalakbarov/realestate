@@ -21,7 +21,7 @@ const PropertyCard = ({property}:Props) => {
   return (
     <div className='bg-white overflow-hidden group rounded-lg cursor-pointer shadow-lg'>
         <div className='relative'>
-            <Image src={property.imageUrl} alt={property.propertyName} width={300} height={300} className='w-full object-cover'/>
+            <Image src={property.imageUrl} alt={property.propertyName} width={300} height={300} priority className='w-full object-cover'/>
             <h1 className='px-6 absolute bottom-4 left-4 py-1.5 text-sm bg-black w-fit text-white rounded-lg'>
                 <span className='text-base font-bold'>
                     $ {property.price} / aylıq

@@ -1,6 +1,6 @@
 import React from 'react'
 import SectionHeader from '@/helpers/SectionHeader'
-import { propertiesData } from '@/data/data'
+import { propertiesData } from '@/data/properties'
 import PropertyCard from '@/helpers/PropertyCard'
 
 const Properties = () => {
